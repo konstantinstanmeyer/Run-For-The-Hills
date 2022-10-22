@@ -13,3 +13,7 @@ On this cutting edge dating app, users can find their potential happily-forever-
 To create an account, users will setup a username and password.  Don’t worry, our top notch hashing and salting methods ensure client security and safety from dark web hackers.  They can upload a photo from their computer and then fill in their stats.  Found oil on your property?  Bought another Ford?  Lost a tooth?  No worries, users can always go back and edit their profile!
 
 Premium users have access to view people who have already liked them, cutting down time to the barn by a striking 81%!  Others are gonna have to be patient and search the entire haystack to find their needle.
+
+Schema:
+
+<img width="1440" alt="Screen Shot 2022-10-21 at 7 14 00 PM" src="https://user-images.githubusercontent.com/78387837/197309952-9650ace3-65a0-4db7-8e0c-263b59519d90.png">
