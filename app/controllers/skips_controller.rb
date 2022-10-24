@@ -1,0 +1,2 @@
+class SkipsController < ApplicationController
+end
