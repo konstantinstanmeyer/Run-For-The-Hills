@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_165204) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_170951) do
   create_table "likes", force: :cascade do |t|
     t.integer "sent_id"
     t.integer "received_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_165204) do
     t.boolean "security_goat?"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "skips", force: :cascade do |t|
