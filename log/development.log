@@ -31,3 +31,80 @@ Migrating to CreateProfiles (20221024164425)
   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-24 16:47:39.312689"], ["updated_at", "2022-10-24 16:47:39.312689"]]
   [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MathcesColumnTypes (20221024165033)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MathcesColumnTypes (20221024165033)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amatches" ("id" integer NOT NULL PRIMARY KEY, "user1_id" varchar DEFAULT NULL, "user2_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "amatches" ("id","user1_id","user2_id","created_at","updated_at")
+                     SELECT "id","user1_id","user2_id","created_at","updated_at" FROM "matches"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "matches"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "matches" ("id" integer NOT NULL PRIMARY KEY, "user1_id" integer DEFAULT NULL, "user2_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "matches" ("id","user1_id","user2_id","created_at","updated_at")
+                     SELECT "id","user1_id","user2_id","created_at","updated_at" FROM "amatches"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "amatches"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amatches" ("id" integer NOT NULL PRIMARY KEY, "user1_id" integer DEFAULT NULL, "user2_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "amatches" ("id","user1_id","user2_id","created_at","updated_at")
+                     SELECT "id","user1_id","user2_id","created_at","updated_at" FROM "matches"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "matches"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "matches" ("id" integer NOT NULL PRIMARY KEY, "user1_id" integer DEFAULT NULL, "user2_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "matches" ("id","user1_id","user2_id","created_at","updated_at")
+                     SELECT "id","user1_id","user2_id","created_at","updated_at" FROM "amatches"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "amatches"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024165033"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ProfileColumnNames (20221024165204)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aprofiles" ("id" integer NOT NULL PRIMARY KEY, "profile_picture" varchar DEFAULT NULL, "photo_png" varchar DEFAULT NULL, "beard_length" integer DEFAULT NULL, "moonshine_abv_level" integer DEFAULT NULL, "rodeo_buckles" integer DEFAULT NULL, "truck_brand" varchar DEFAULT NULL, "mode_of_tobacco" varchar DEFAULT NULL, "pontoon_boat?" boolean DEFAULT NULL, "security_goat" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aprofiles" ("id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat","created_at","updated_at")
+                     SELECT "id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat","security_goat","created_at","updated_at" FROM "profiles"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "profiles"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer NOT NULL PRIMARY KEY, "profile_picture" varchar DEFAULT NULL, "photo_png" varchar DEFAULT NULL, "beard_length" integer DEFAULT NULL, "moonshine_abv_level" integer DEFAULT NULL, "rodeo_buckles" integer DEFAULT NULL, "truck_brand" varchar DEFAULT NULL, "mode_of_tobacco" varchar DEFAULT NULL, "pontoon_boat?" boolean DEFAULT NULL, "security_goat" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "profiles" ("id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat","created_at","updated_at")
+                     SELECT "id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat","created_at","updated_at" FROM "aprofiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aprofiles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aprofiles" ("id" integer NOT NULL PRIMARY KEY, "profile_picture" varchar DEFAULT NULL, "photo_png" varchar DEFAULT NULL, "beard_length" integer DEFAULT NULL, "moonshine_abv_level" integer DEFAULT NULL, "rodeo_buckles" integer DEFAULT NULL, "truck_brand" varchar DEFAULT NULL, "mode_of_tobacco" varchar DEFAULT NULL, "pontoon_boat?" boolean DEFAULT NULL, "security_goat?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aprofiles" ("id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat?","created_at","updated_at")
+                     SELECT "id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat","created_at","updated_at" FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "profiles"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer NOT NULL PRIMARY KEY, "profile_picture" varchar DEFAULT NULL, "photo_png" varchar DEFAULT NULL, "beard_length" integer DEFAULT NULL, "moonshine_abv_level" integer DEFAULT NULL, "rodeo_buckles" integer DEFAULT NULL, "truck_brand" varchar DEFAULT NULL, "mode_of_tobacco" varchar DEFAULT NULL, "pontoon_boat?" boolean DEFAULT NULL, "security_goat?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "profiles" ("id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat?","created_at","updated_at")
+                     SELECT "id","profile_picture","photo_png","beard_length","moonshine_abv_level","rodeo_buckles","truck_brand","mode_of_tobacco","pontoon_boat?","security_goat?","created_at","updated_at" FROM "aprofiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aprofiles"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024165204"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

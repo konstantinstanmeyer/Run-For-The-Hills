@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_164425) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_165204) do
   create_table "likes", force: :cascade do |t|
     t.integer "sent_id"
     t.integer "received_id"
@@ -19,8 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_164425) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.string "user1_id"
-    t.string "user2_id"
+    t.integer "user1_id"
+    t.integer "user2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,8 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_164425) do
     t.integer "rodeo_buckles"
     t.string "truck_brand"
     t.string "mode_of_tobacco"
-    t.boolean "pontoon_boat"
-    t.boolean "security_goat"
+    t.boolean "pontoon_boat?"
+    t.boolean "security_goat?"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
