@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :profiles
+  resources :profiles 
   resources :matches
   resources :likes
   resources :skips
@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#delete' 
   get '/authorized_user', to: 'users#show'
+  # patch '/editaccount', to: 'users#update'
+  # patch '/editprofile', to: 'profile#update'
 end

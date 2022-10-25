@@ -36,6 +36,7 @@ u4 = User.create(
     password_digest: 'sdfasfaew'
 )
 
+
 p1 = Profile.create(
     profile_picture: 'https://sexyscience1.files.wordpress.com/2013/11/worst-online-dating-profile-photo-8.jpg',
     photo_png: 'nill',
@@ -86,7 +87,7 @@ p4 = Profile.create(
     mode_of_tobacco: 'all',
     pontoon_boat?: true,
     security_goat?: true,
-    user_id: u4.id
+    user_id: User.last.id
 )
 
 puts "done seeding"
