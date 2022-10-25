@@ -1745,3 +1745,165 @@ DELETE FROM "profiles"[0m
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
   [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("profile_picture", "photo_png", "beard_length", "moonshine_abv_level", "rodeo_buckles", "truck_brand", "mode_of_tobacco", "pontoon_boat?", "security_goat?", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["profile_picture", "https://media.gettyimages.com/photos/cowgirl-picture-id157185521?s=612x612"], ["photo_png", "nill"], ["beard_length", 0], ["moonshine_abv_level", 17], ["rodeo_buckles", 83], ["truck_brand", "ford"], ["mode_of_tobacco", "all"], ["pontoon_boat?", 1], ["security_goat?", 1], ["created_at", "2022-10-25 15:57:26.112171"], ["updated_at", "2022-10-25 15:57:26.112171"], ["user_id", 13]]
   [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/profiles" for 127.0.0.1 at 2022-10-25 09:58:05 -0600
+Processing by ProfilesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.34ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.0ms | Allocations: 26351)
+
+
+  
+NoMethodError (undefined method `pontoon_boat' for #<Profile:0x00007fc0bb4fb298>
+Did you mean?  pontoon_boat?
+               pontoon_boat??
+               pontoon_boat?=):
+  
+app/controllers/profiles_controller.rb:3:in `index'
+Started GET "/profiles" for 127.0.0.1 at 2022-10-25 09:58:05 -0600
+Processing by ProfilesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.24ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 5555)
+
+
+  
+NoMethodError (undefined method `pontoon_boat' for #<Profile:0x00007fc0bd0f0e08>
+Did you mean?  pontoon_boat?
+               pontoon_boat??
+               pontoon_boat?=):
+  
+app/controllers/profiles_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-10-25 09:58:52 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shleebles/.rvm/rubies/ruby-2.7.4/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shleebles/.rvm/rubies/ruby-2.7.4/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.9ms | Allocations: 565)
+Completed 200 OK in 34ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+
+Started GET "/profile" for ::1 at 2022-10-25 09:58:56 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+Started GET "/favicon.ico" for ::1 at 2022-10-25 09:58:56 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/profiles" for ::1 at 2022-10-25 09:59:00 -0600
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.32ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms | Allocations: 5528)
+
+
+  
+NoMethodError (undefined method `pontoon_boat' for #<Profile:0x00007fc0b9ce05c8>
+Did you mean?  pontoon_boat?
+               pontoon_boat??
+               pontoon_boat?=):
+  
+app/controllers/profiles_controller.rb:3:in `index'
+Started GET "/profiles" for ::1 at 2022-10-25 09:59:43 -0600
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 27ms (Views: 20.6ms | ActiveRecord: 1.9ms | Allocations: 11053)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2022-10-25 09:59:48 -0600
+Processing by ProfilesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.07ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 2012)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2022-10-25 09:59:48 -0600
+Processing by ProfilesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 2012)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (5.1ms)[0m  [1m[31mDELETE FROM "users";
+DELETE FROM "skips";
+DELETE FROM "likes";
+DELETE FROM "matches";
+DELETE FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "a@gmail.com"], ["first_name", "Billy"], ["last_name", "Bob"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-25 16:03:48.201750"], ["updated_at", "2022-10-25 16:03:48.201750"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "b@gmail.com"], ["first_name", "Joe"], ["last_name", "Jobs"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-25 16:03:48.205728"], ["updated_at", "2022-10-25 16:03:48.205728"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "c@gmail.com"], ["first_name", "Bertha"], ["last_name", "Branson"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-25 16:03:48.209342"], ["updated_at", "2022-10-25 16:03:48.209342"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "d@gmail.com"], ["first_name", "Wendy"], ["last_name", "Baconator"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-25 16:03:48.212909"], ["updated_at", "2022-10-25 16:03:48.212909"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("profile_picture", "photo_png", "beard_length", "moonshine_abv_level", "rodeo_buckles", "truck_brand", "mode_of_tobacco", "pontoon_boat?", "security_goat?", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["profile_picture", "https://sexyscience1.files.wordpress.com/2013/11/worst-online-dating-profile-photo-8.jpg"], ["photo_png", "nill"], ["beard_length", 0], ["moonshine_abv_level", 21], ["rodeo_buckles", 0], ["truck_brand", "DUI"], ["mode_of_tobacco", "chew"], ["pontoon_boat?", 0], ["security_goat?", 1], ["created_at", "2022-10-25 16:03:48.243047"], ["updated_at", "2022-10-25 16:03:48.243047"], ["user_id", 14]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("profile_picture", "photo_png", "beard_length", "moonshine_abv_level", "rodeo_buckles", "truck_brand", "mode_of_tobacco", "pontoon_boat?", "security_goat?", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["profile_picture", "https://media.istockphoto.com/photos/crazy-old-man-cowboy-with-rotted-teeth-humor-picture-id490069487?k=20&m=490069487&s=612x612&w=0&h=15WilhN8du-YJylQqyC0wFsu6_VJM3EkbWQII27xxYw="], ["photo_png", "nill"], ["beard_length", 0], ["moonshine_abv_level", 21], ["rodeo_buckles", 0], ["truck_brand", "chevy"], ["mode_of_tobacco", "chew"], ["pontoon_boat?", 0], ["security_goat?", 0], ["created_at", "2022-10-25 16:03:48.248218"], ["updated_at", "2022-10-25 16:03:48.248218"], ["user_id", 15]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("profile_picture", "photo_png", "beard_length", "moonshine_abv_level", "rodeo_buckles", "truck_brand", "mode_of_tobacco", "pontoon_boat?", "security_goat?", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["profile_picture", "https://www.duffresearch.com/wp-content/uploads/bad-dating-profile.jpg"], ["photo_png", "tbd"], ["beard_length", 3], ["moonshine_abv_level", 99], ["rodeo_buckles", 0], ["truck_brand", "no license"], ["mode_of_tobacco", "roach"], ["pontoon_boat?", 0], ["security_goat?", 1], ["created_at", "2022-10-25 16:03:48.254020"], ["updated_at", "2022-10-25 16:03:48.254020"], ["user_id", 16]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("profile_picture", "photo_png", "beard_length", "moonshine_abv_level", "rodeo_buckles", "truck_brand", "mode_of_tobacco", "pontoon_boat?", "security_goat?", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["profile_picture", "https://media.gettyimages.com/photos/cowgirl-picture-id157185521?s=612x612"], ["photo_png", "nill"], ["beard_length", 0], ["moonshine_abv_level", 17], ["rodeo_buckles", 83], ["truck_brand", "ford"], ["mode_of_tobacco", "all"], ["pontoon_boat?", 1], ["security_goat?", 1], ["created_at", "2022-10-25 16:03:48.259148"], ["updated_at", "2022-10-25 16:03:48.259148"], ["user_id", 17]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/profiles" for 127.0.0.1 at 2022-10-25 10:03:55 -0600
+Processing by ProfilesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.49ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 2020)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2022-10-25 10:03:55 -0600
+Processing by ProfilesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.89ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2020)
+
+

@@ -50,7 +50,7 @@ p1 = Profile.create(
 )
 
 p2 = Profile.create(
-    profile_picture: 'https://sexyscience1.files.wordpress.com/2013/11/worst-online-dating-profile-photo-8.jpg',
+    profile_picture: 'https://media.istockphoto.com/photos/crazy-old-man-cowboy-with-rotted-teeth-humor-picture-id490069487?k=20&m=490069487&s=612x612&w=0&h=15WilhN8du-YJylQqyC0wFsu6_VJM3EkbWQII27xxYw=',
     photo_png: 'nill',
     beard_length: 0,
     moonshine_abv_level: 21.3,
