@@ -4,13 +4,13 @@ class SkipsController < ApplicationController
     end
 
     def create
-        skip = Skip.create!(skip_params)
+        skip = Skip.create!(skips_params)
         render json: skip, status: :created
     end 
     
     private 
 
-    def like_params
-        params.permit(:sender_id, :rejected_id)
+    def skips_params
+        params.permit(:user_id, :rejected_id)
     end
 end
