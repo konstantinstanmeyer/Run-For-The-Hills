@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_170951) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_26_204936) do
   create_table "likes", force: :cascade do |t|
-    t.integer "sent_id"
+    t.integer "user_id"
     t.integer "received_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "match_id"
   end
 
   create_table "matches", force: :cascade do |t|
