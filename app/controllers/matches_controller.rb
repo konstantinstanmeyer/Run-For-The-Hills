@@ -12,7 +12,7 @@ class MatchesController < ApplicationController
     private 
 
     def match_params
-        params.permit(:user1_id, :user2_id)
+        params.permit(:user1_id, :user2_id, :didtheymatch)
     end
 
 end
