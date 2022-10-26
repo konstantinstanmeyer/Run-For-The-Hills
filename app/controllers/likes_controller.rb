@@ -15,5 +15,4 @@ class LikesController < ApplicationController
         params.permit(:user_id, :received_id, :match_id)
     end
 
-
 end
