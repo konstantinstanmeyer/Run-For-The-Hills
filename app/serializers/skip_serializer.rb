@@ -1,3 +1,3 @@
 class SkipSerializer < ActiveModel::Serializer
-  attributes :id, :sender_id, :rejected_id
+  attributes :id, :user_id, :rejected_id
 end

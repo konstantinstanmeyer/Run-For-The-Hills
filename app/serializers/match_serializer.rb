@@ -1,3 +1,3 @@
 class MatchSerializer < ActiveModel::Serializer
-  attributes :id, :user1_id, :user2_id
+  attributes :id, :user1_id, :user2_id, :didtheymatch
 end
