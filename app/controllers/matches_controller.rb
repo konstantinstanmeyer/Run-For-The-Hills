@@ -9,6 +9,12 @@ class MatchesController < ApplicationController
         render json: match, status: :created
     end 
     
+    def update
+        match = Match.find(params[:id])
+        match.update!(match_params)
+        render json: match, status: :accepted
+    end
+
     private 
 
     def match_params
