@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
     def show 
-        render json: current_user, status: :ok
+        profile = Profile.find(params[:id])
+        render json: profile , status: :ok
     end
     
     def index
