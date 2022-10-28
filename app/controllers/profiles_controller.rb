@@ -1,8 +1,7 @@
 class ProfilesController < ApplicationController
-   
-    # def show 
-    #     render json: current_user, status: :ok
-    # end
+    def show 
+        render json: current_user, status: :ok
+    end
     
     def index
         render json: Profile.all
@@ -18,7 +17,6 @@ class ProfilesController < ApplicationController
         profile = Profile.create!(profile_params)
         render json: profile, status: :created
     end
-
     
     private 
 
