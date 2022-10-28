@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :authorized_user, only: [:create]
 
     def show 
-        render json: current_user, status: :ok
+        render json: @current_user, status: :ok
     end
     
     def index
@@ -11,10 +11,12 @@ class UsersController < ApplicationController
 
     def create
         user = User.create!(user_params)
+        profile = Profile.create(user_id: user.id)
+        session[:user_id] = user.id
         render json: user, status: :created
-    end 
-    
-    private 
+    end
+
+    private
 
     def user_params
         params.permit(:first_name, :last_name, :email, :password)
